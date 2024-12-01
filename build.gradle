@@ -40,3 +40,19 @@ tasks.register('simple_test', Test) {
         includeTags("simple")
     }
 }
+
+tasks.register('positive_test', Test) {
+    useJUnitPlatform {
+        includeTags("positive")
+    }
+}
+tasks.register('negative_test', Test) {
+    useJUnitPlatform {
+        includeTags("negative")
+    }
+}
+tasks.register('ignored_test', Test) {
+    useJUnitPlatform {
+        includeTags("ignored")
+    }
+}
