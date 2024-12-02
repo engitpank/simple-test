@@ -23,7 +23,9 @@ dependencies {
     testImplementation(
             "com.codeborne:selenide:7.6.0",
             "org.junit.jupiter:junit-jupiter:5.9.3",
-            'io.qameta.allure:allure-selenide:2.19.0'
+            'io.qameta.allure:allure-selenide:2.19.0',
+            "com.github.javafaker:javafaker:1.0.2",
+            'org.aspectj:aspectjtools:1.9.9'
     )
 }
 
@@ -54,5 +56,10 @@ tasks.register('negative_test', Test) {
 tasks.register('ignored_test', Test) {
     useJUnitPlatform {
         includeTags("ignored")
+    }
+}
+tasks.register('UI', Test) {
+    useJUnitPlatform {
+        includeTags("UI")
     }
 }
