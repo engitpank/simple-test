@@ -23,6 +23,8 @@ public class BaseTestRemote {
         Configuration.browserSize = BROWSER_EXC;
         Configuration.remote = SELENOID_URL + "/wd/hub";
 
+        Configuration.pageLoadStrategy = "eager";
+
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,

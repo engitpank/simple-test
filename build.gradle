@@ -29,7 +29,12 @@ dependencies {
     )
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(Test).configureEach {
+    systemProperties(System.getProperties())
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
