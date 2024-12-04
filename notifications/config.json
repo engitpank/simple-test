@@ -1,0 +1,19 @@
+{
+  "base": {
+    "logo": "",
+    "project": "${JOB_BASE_NAME}",
+    "environment": "local",
+    "comment": "",
+    "reportLink": "${BUILD_URL}",
+    "language": "ru",
+    "allureFolder": "build/allure-report/",
+    "enableChart": true,
+    "enableSuitesPublishing": false,
+    "customData": {}
+  },
+  "telegram": {
+    "token": "",
+    "chat": "",
+    "replyTo": ""
+  }
+}
