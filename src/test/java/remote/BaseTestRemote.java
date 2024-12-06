@@ -2,7 +2,9 @@ package remote;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import config.WebDriverConfig;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,24 +13,23 @@ import remote.helpers.Attach;
 
 import java.util.Map;
 
-import static remote.PropertyManager.*;
-
 public class BaseTestRemote {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = BASE_URL;
-        Configuration.browser = BROWSER_NAME;
-        Configuration.browserVersion = BROWSER_VERSION;
-        Configuration.browserSize = BROWSER_EXC;
-        Configuration.remote = SELENOID_URL + "/wd/hub";
+        WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+        Configuration.baseUrl = config.getBaseUrl();
+        Configuration.browser = config.getBrowserName();
+        Configuration.browserVersion = config.getBrowserVersion();
+        Configuration.browserSize = config.getBrowserSize();
+        Configuration.remote = config.getSelenoidUrl() + "/wd/hub";
 
-        Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadStrategy = config.getPageLoadStrategy();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
+                "enableVNC", config.isEnableVNC(),
+                "enableVideo", config.isEnableVideo()
         ));
 
         Configuration.browserCapabilities = capabilities;

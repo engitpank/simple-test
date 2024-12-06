@@ -1,10 +1,11 @@
 package remote.helpers;
 
 import com.codeborne.selenide.Selenide;
+import config.WebDriverConfig;
 import io.qameta.allure.Attachment;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import remote.PropertyManager;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -45,7 +46,8 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = PropertyManager.SELENOID_URL + "/video/" + sessionId() + ".mp4";
+        WebDriverConfig config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+        String videoUrl = config.getBaseUrl() + "/video/" + sessionId() + ".mp4";
 //        System.out.println(sessionId());
         try {
             return new URL(videoUrl);
