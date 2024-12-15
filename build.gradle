@@ -26,7 +26,8 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.19.0',
             "com.github.javafaker:javafaker:1.0.2",
             'org.aspectj:aspectjtools:1.9.9',
-            'org.aeonbits.owner:owner:1.0.12'
+            'org.aeonbits.owner:owner:1.0.12',
+            'io.rest-assured:rest-assured:5.5.0'
     )
 }
 
