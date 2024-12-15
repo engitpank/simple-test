@@ -1,11 +1,11 @@
-package remote.registration;
+package ui.registration;
 
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import remote.BaseTestRemote;
-import remote.helpers.RandomElement;
+import ui.BaseTestRemote;
+import ui.helpers.RandomElement;
 
 import java.time.LocalDate;
 import java.time.ZoneId;

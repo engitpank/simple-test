@@ -1,4 +1,4 @@
-package remote.components;
+package ui.components;
 
 import static com.codeborne.selenide.Selenide.$;
 

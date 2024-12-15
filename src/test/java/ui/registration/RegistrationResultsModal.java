@@ -1,4 +1,4 @@
-package remote.registration;
+package ui.registration;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;

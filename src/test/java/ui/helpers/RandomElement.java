@@ -1,4 +1,4 @@
-package remote.helpers;
+package ui.helpers;
 
 import com.github.javafaker.Faker;
 
