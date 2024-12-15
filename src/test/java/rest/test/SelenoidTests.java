@@ -1,4 +1,4 @@
-package rest;
+package rest.test;
 
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
